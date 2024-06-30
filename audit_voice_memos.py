@@ -6,6 +6,7 @@ import os
 import plistlib
 from mutagen.mp4 import MP4
 
+
 def get_m4a_info(file_path):
     audio = MP4(file_path)
     creation_date = datetime.datetime.fromtimestamp(os.path.getctime(file_path), datetime.timezone.utc)
@@ -13,14 +14,6 @@ def get_m4a_info(file_path):
     duration_by_info = audio.info.length
     duration_by_tags = float(audio.tags.get('©dur', [0])[0]) if '©dur' in audio.tags else None
     
-    
-    #audio_segment = pydub.AudioSegment.from_file(file_path, format='m4a')
-    #samples = audio_segment.get_array_of_samples()
-    #sample_rate = audio_segment.frame_rate
-    #duration_by_samples = len(samples) / sample_rate / audio_segment.channels
-    #print(f'Duration by samples (number of samples / sample_rate / channels): {duration_by_samples}')
-    #print(f'Sample rate: {sample_rate} Hz')
-
     file_size = os.path.getsize(file_path)
     
 
@@ -188,8 +181,12 @@ def main():
     for m4a_file in m4a_files:
         if not os.access(m4a_file, os.R_OK):
             raise Exception(f'Cannot read m4a file: {m4a_file}')
-
-    report = f'Comparison of recordings in {args.db_path} to m4a files in {args.m4a_path}\n'
+    report = """--------------------------
+Voice Memo Forensics Tool
+Version: 0.9.0
+Copyright: (c) 2024 Francesco de Lorenzi
+--------------------------\n"""
+    report += f'Comparison of recordings in {args.db_path} to m4a files in {args.m4a_path}\n'
     report += f'Timestamp: {datetime.datetime.now()}\n'
     print(report)
     
