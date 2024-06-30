@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "voice-memo-forensics"
+version = "0.9.0"
+description = "Voice Memo Forensic Analysis Tool"
+authors = ["Francesco de Lorenzi <francesco@delorenzi.me>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mutagen = "1.47.0"
