@@ -117,5 +117,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Reference
 
-This tool is inspired by the following paper:
-"Forensic originality identification of iPhone’s voice memos" Jinhua Zeng et al. 2019 J. Phys.: Conf. Ser. 1345 052053.
+This tool is informed by the findings in the following paper:
+Zeng, Jinhua, Qiuxiu Lian, and Shaopei Shi. "Forensic originality identification of iPhone’s voice memos." Journal of Physics: Conference Series. Vol. 1345. No. 5. IOP Publishing, 2019.
